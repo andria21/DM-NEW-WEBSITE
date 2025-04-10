@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'BPG Arial';
+    src: url('https://fonts.googleapis.com/css2?family=BPG+Arial&display=swap');
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Navbar Styles */
+.nav-link {
+  @apply relative py-2 transition-all;
+}
+
+.nav-link-underline {
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-emerald-400 transform scale-x-0 transition-transform duration-200 ease-out group-hover:scale-x-100;
+}
+
+/* Add a subtle glow effect to the navbar */
+.navbar-glow {
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.1);
+}
+
+/* Hero Section Typography */
+.hero-title {
+  @apply text-5xl md:text-7xl lg:text-8xl font-bold;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'BPG Arial', sans-serif;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  padding: 0.1em 0;
+}
+
+.hero-title-ge {
+  @apply text-4xl md:text-5xl lg:text-6xl font-bold;
+  font-family: 'BPG Arial', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  padding: 0.2em 0;
+  letter-spacing: -0.01em;
+}
+
+.hero-title span {
+  @apply block;
+  margin: 0.2em 0;
+}
